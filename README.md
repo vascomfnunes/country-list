@@ -1,3 +1,21 @@
+<h3 align="center">
+    <a href="https://github.com/umpirsky">
+        <img src="https://farm2.staticflickr.com/1709/25098526884_ae4d50465f_o_d.png" />
+    </a>
+</h3>
+<p align="center">
+  <a href="https://github.com/umpirsky/Symfony-Upgrade-Fixer">symfony upgrade fixer</a> &bull;
+  <a href="https://github.com/umpirsky/Twig-Gettext-Extractor">twig gettext extractor</a> &bull;
+  <a href="https://github.com/umpirsky/wisdom">wisdom</a> &bull;
+  <a href="https://github.com/umpirsky/centipede">centipede</a> &bull;
+  <a href="https://github.com/umpirsky/PermissionsHandler">permissions handler</a> &bull;
+  <a href="https://github.com/umpirsky/Extraload">extraload</a> &bull;
+  <a href="https://github.com/umpirsky/Gravatar">gravatar</a> &bull;
+  <a href="https://github.com/umpirsky/locurro">locurro</a> &bull;
+  <b>country list</b> &bull;
+  <a href="https://github.com/umpirsky/Transliterator">transliterator</a>
+</p>
+
 Country List
 ============
 
@@ -11,30 +29,18 @@ Formats Available
 - YAML
 - XML
 - HTML
-    * Select ([demo](http://country-list.umpirsky.com/country.html))
-    * Flags ([demo](http://country-list.umpirsky.com/country.flags.html))
 - CSV
 - SQL
     * MySQL
     * PostgreSQL
     * SQLite
-    * SQL Server
 - PHP
+- XLIFF
 
 Multilingual
 ------------
 
-All formats are also available in multiple languages, please find full language list [here](https://github.com/umpirsky/country-list/tree/master/country/cldr).
-
-Where Does the Data Come From?
-------------------------------
-
-For now, I have implemented two data importers:
-
-* ICU (imports data from [ICU](http://site.icu-project.org/))
-* CLDR (imports data from [CLDR](http://cldr.unicode.org/))
-
-So, if country list changes in the future, it will be very easy to update our country list.
+All formats are also available in multiple languages, please find full language list [here](https://github.com/umpirsky/country-list/tree/master/data).
 
 Build
 -----
@@ -43,6 +49,13 @@ Country list is available out of the box, but if you want to submit patches, add
 update data source or contribute in any other way, you will probably want to rebuild the list:
 
 ```bash
-$ composer install --dev
-$ console build
+$ docker-compose run php /var/www/html/bin/build -v
 ```
+
+Other Interesting Lists
+-----------------------
+
+* [Currency List](https://github.com/umpirsky/currency-list)
+* [Language List](https://github.com/umpirsky/language-list)
+* [Locale List](https://github.com/umpirsky/locale-list)
+* [TLD List](https://github.com/umpirsky/tld-list)

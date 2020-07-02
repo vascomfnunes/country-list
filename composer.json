@@ -5,33 +5,30 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Саша Стаменковић",
+            "name": "Saša Stamenković",
             "email": "umpirsky@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.zendframework.com/"
-        }
-    ],
     "require": {
-        "php": ">=5.3.2"
+        "php": "^7.0"
     },
-    "require-dev": {   
-        "symfony/class-loader":         "2.1.*",
-        "symfony/console":              "2.1.*",
-        "symfony/filesystem":           "2.1.*",
-        "symfony/finder":               "2.1.*",
-        "symfony/locale":               "2.1.*",
-        "symfony/yaml":                 "2.1.*",
-        "doctrine/dbal":                "2.*",
-        "zendframework/zendframework1": "1.*",
-        "zendframework/zend-db":        "2.0.*"
+    "require-dev": {
+        "umpirsky/list-generator": "^1.2",
+        "slowprog/composer-copy-file": "^0.2",
+        "symfony/intl": "^4.3"
     },
-    "autoload": {
-        "psr-0": {
-            "Umpirsky\\Country": "src/"
+    "scripts": {
+        "post-install-cmd": [
+            "SlowProg\\CopyFile\\ScriptHandler::copy"
+        ],
+        "post-update-cmd": [
+            "SlowProg\\CopyFile\\ScriptHandler::copy"
+        ]
+    },
+    "extra": {
+        "copy-file": {
+            "vendor/umpirsky/list-generator/Dockerfile": "./",
+            "vendor/umpirsky/list-generator/docker-compose.yml": "./"
         }
     }
 }
